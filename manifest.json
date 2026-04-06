@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "SwiftPass - Password Generator",
+  "version": "1.0",
+  "description": "SwiftPass: Free strong password generator & auto-fill tool. Create secure, random passwords instantly. One-click fill for any login form. Protect your accounts with uncrackable passwords.",
+  "author": "Ashok Kuikel",
+  "homepage_url": "https://ashokkuikel.com",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["clipboardWrite", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"]
+}

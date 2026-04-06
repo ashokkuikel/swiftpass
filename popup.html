@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+  SwiftPass - Password Generator
+  @author    Ashok Kuikel
+  @website   https://ashokkuikel.com
+  @version   1.0
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SwiftPass - Password Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+          <circle cx="12" cy="11" r="2" fill="currentColor"/>
+          <path d="M12 13v3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        SwiftPass
+      </div>
+    </div>
+
+    <!-- Password Box -->
+    <div class="pw-box">
+      <div class="pw-text" id="pwText">generating...</div>
+      <div class="pw-actions">
+        <button class="regen-btn" id="regenBtn" title="Regenerate">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 4v6h-6M1 20v-6h6"/>
+            <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/>
+          </svg>
+        </button>
+        <button class="copy-pw-btn" id="copyPwBtn">Copy password</button>
+      </div>
+    </div>
+
+    <!-- Strength Bar -->
+    <div class="strength-row">
+      <div class="strength-track">
+        <div class="strength-fill" id="strengthFill"></div>
+      </div>
+      <div class="strength-label" id="strengthLabel">
+        <span class="strength-icon" id="strengthIcon">🛡</span>
+        <span id="strengthText">—</span>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel">
+
+      <!-- Length -->
+      <div class="setting-row">
+        <span class="setting-label">Password Length <strong id="lenVal">16</strong></span>
+        <input type="range" id="lenSlider" min="8" max="32" value="16" class="slider" />
+      </div>
+
+      <!-- Characters -->
+      <div class="setting-divider"></div>
+      <div class="setting-row">
+        <span class="setting-label">Characters Used</span>
+        <div class="checkboxes">
+          <label class="cb-label">
+            <input type="checkbox" id="optUpper" checked />
+            <span class="cb-box"></span>
+            Uppercase
+          </label>
+          <label class="cb-label">
+            <input type="checkbox" id="optLower" checked />
+            <span class="cb-box"></span>
+            Lowercase
+          </label>
+          <label class="cb-label">
+            <input type="checkbox" id="optNum" checked />
+            <span class="cb-box"></span>
+            Numbers
+          </label>
+          <label class="cb-label">
+            <input type="checkbox" id="optSym" checked />
+            <span class="cb-box"></span>
+            Symbols
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Status -->
+    <div class="status" id="status"></div>
+
+    <!-- Fill Button -->
+    <button class="fill-btn" id="fillBtn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+      Fill Password on Page
+    </button>
+
+    <!-- History -->
+    <div class="history-section" id="historySection" style="display:none">
+      <div class="history-header">
+        <span>Recent</span>
+        <span class="clear-hist" id="clearHist">clear all</span>
+      </div>
+      <ul class="history-list" id="historyList"></ul>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
